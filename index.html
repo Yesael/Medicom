@@ -371,6 +371,7 @@
         <section class="blog-wrap-layout1" ng-app="universidadApp">
             <div class="container">
             <div class="section-heading text-center heading-dark heading-layout2">
+                
                     <h2>Nuestras Especialidades</h2>
 
                     <div class="container" ng-controller="listadoCtrl">
@@ -413,7 +414,6 @@
             
             
                         </table>
-
                     </div><!-- fin del listadoCtrl -->
                 </div>
             </div>
@@ -528,10 +528,10 @@
                 <div class="row">
                     <div class="col-lg-7 d-flex align-items-center order-lg-2">
                         <div class="contact-form-wrap">
-                            <form class="contact-form-box" id="agenda">
+                            <form class="contact-form-box"  id="form-agenda" method="POST"  >
                                 <div class="row">
                                     <div class="col-md-12 form-group">
-                                        <input type="text" placeholder="Name *" class="form-control" name="name" data-error="Name field is required" required>
+                                        <input type="text" placeholder="Name *" class="form-control" name="nombre" data-error="Name field is required" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-md-12 form-group">
@@ -543,15 +543,15 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-md-6 form-group">
-                                        <input type="tel" placeholder="Celular *" class="form-control" name="tel" data-error="celular field is required" required>
+                                        <input type="tel" placeholder="Celular *" class="form-control" name="celular" data-error="celular field is required" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                      <div class="col-md-6 form-group">
-                                        <input  type="date" placeholder="Fecha *" class="form-control" name="fec" data-error="fecha field is required" required>
+                                        <input  type="date" placeholder="Fecha *" class="form-control" name="fecha" data-error="fecha field is required" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="col-md-6 form-group">
-                                        <input type="time" placeholder="Hora *" class="form-control" name="hor" data-error="hora field is required" required>
+                                        <input type="time" placeholder="Hora *" class="form-control" name="hora" data-error="hora field is required" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     
@@ -621,19 +621,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrap">
+                <div class="contact-form-wrap" >
                     <div class="section-heading text-center heading-dark heading-layout2">
                         <h2>Contactanos</h2>
                         <p>Estamos para servirte.</p>
                     </div>
-                    <form class="contact-form-box" id="contact-form">
+                    <form class="contact-form-box" id="form-contacto" method="post">
                         <div class="row">
                             <div class="col-md-4 form-group">
                                 <input type="text" placeholder="Name *" class="form-control" name="name" data-error="Name field is required" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-md-4 form-group">
-                                <input type="email" placeholder="E-mail *" class="form-control" name="email" data-error="e-mail field is required" required>
+                                <input type="email" placeholder="E-mail *" class="form-control" name="email"  data-error="e-mail field is required" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-md-4 form-group">
@@ -646,7 +646,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-12 form-group">
-                                <button type="submit" class="item-btn">Sends Message<i class="flaticon-right-arrow"></i></button>
+                                <button type="submit" class="item-btn" >Sends Message<i class="flaticon-right-arrow"></i></button>
                             </div>
                         </div>
                         <div class="form-response"></div>

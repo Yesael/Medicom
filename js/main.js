@@ -1,6 +1,75 @@
 (function ($) {
     "use strict";
 
+    const formContact  = document.getElementById('form-contacto');
+
+    formContact.addEventListener('submit', (event) => {
+        console.log('Enviando.....');
+        let datos={};
+        datos.id=makeid(8);
+        datos.nombre=formContact.elements['name'].value;
+        datos.email=formContact.elements['email'].value;
+        datos.asunto=formContact.elements['subject'].value;
+        datos.comentario=formContact.elements['message'].value;
+        fetch('https://us-central1-medicom-f4ff2.cloudfunctions.net/app/api/contacto', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datos),
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        alert('Se enviaron los datos correctamente');
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+        
+    });
+
+    const formAgenda  = document.getElementById('form-agenda');
+
+    formAgenda.addEventListener('submit', (event) => {
+        console.log('Enviando.....');
+        let datos={};
+        datos.id=makeid(8);
+        datos.nombre=formAgenda.elements['nombre'].value;
+        datos.email=formAgenda.elements['email'].value;
+        datos.celular=formAgenda.elements['celular'].value;
+        datos.direccion=formAgenda.elements['direccion'].value;
+        datos.fecha=formAgenda.elements['fecha'].value;
+        datos.hora=formAgenda.elements['hora'].value;
+        fetch('https://us-central1-medicom-f4ff2.cloudfunctions.net/app/api/citas', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datos),
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        alert('Se enviaron los datos correctamente');
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+        
+    });
+
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * 
+     charactersLength));
+       }
+       return result;
+    }
+
     /*-------------------------------------
      Contact Form initiating
      -------------------------------------*/
@@ -9,13 +78,14 @@
         contactForm.validator().on('submit', function (e) {
             var $this = $(this),
                 $target = contactForm.find('.form-response');
+                console.log(contactForm);
             if (e.isDefaultPrevented()) {
                 $target.html("<div class='alert alert-danger'><p>Please select all required field.</p></div>");
             } else {
                 $.ajax({
-                    url: "vendor/php/form-process.php",
+                    url: "http://localhost:5000/medicom-f4ff2/us-central1/app/api/contacto",
                     type: "POST",
-                    data: contactForm.serialize(),
+                    data: contactForm.serialize() + '&id=' + makeid(8),
                     beforeSend: function () {
                         $target.html("<div class='alert alert-info'><p>Loading ...</p></div>");
                     },
