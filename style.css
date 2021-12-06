@@ -2630,7 +2630,7 @@ header.header {
 .slider-area .slide-3 div.slider-big-text {
   font-size: 8rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 20px;
   line-height: 1.1;
   width: 60%;
@@ -2698,7 +2698,7 @@ header.header {
 .slider-area .slide-1 div.slider-paragraph,
 .slider-area .slide-2 div.slider-paragraph,
 .slider-area .slide-3 div.slider-paragraph {
-  color: #cccccc;
+  color: #000000;
   margin-bottom: 20px;
   width: 55%;
 }
@@ -2712,7 +2712,7 @@ header.header {
 .slider-area .slide-1 div.slider-paragraph.text-light,
 .slider-area .slide-2 div.slider-paragraph.text-light,
 .slider-area .slide-3 div.slider-paragraph.text-light {
-  color: #ffffff;
+  color: #000000;
 }
 .slider-area .slide-1 .slider-big-text.padding-right,
 .slider-area .slide-2 .slider-big-text.padding-right,
@@ -3288,7 +3288,7 @@ header.header {
 .slider-layout4 .slide-3 div.slider-paragraph {
   animation: fadeInUp 2500ms ease-in-out;
   font-size: 20px;
-  color: #ffffff;
+  color: #000000;
 }
 @media only screen and (max-width: 767px) {
   .slider-layout4 .slide-1 div.slider-paragraph,
@@ -3436,7 +3436,7 @@ header.header {
 .service-box-layout1 .item-sl .item-title {
   font-size: 24px;
   font-weight: 600;
-  color: #111111;
+  color: #ffffff;
   position: absolute;
   top: 50%;
   left: 0;
